@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Salón Mirador — Salón de eventos sobre el valle</title>
+  <meta name="description" content="Salón Mirador es un salón de eventos de arquitectura contemporánea, suspendido entre la sierra y el valle. Bodas, XV años y celebraciones con un horizonte a la altura de la ocasión." />
+  <meta name="theme-color" content="#1a1613" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Salón Mirador — Celebra sobre el valle" />
+  <meta property="og:description" content="Arquitectura contemporánea, luz de atardecer y un horizonte que se vuelve parte de cada celebración." />
+  <meta property="og:image" content="./media/facade-golden.jpg" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231a1613'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' fill='%23c9a877' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <script type="module" src="/src/js/main.js"></script>
+</head>
+
+<body>
+  <!-- Grain / film overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Progress bar -->
+  <div class="scroll-progress" aria-hidden="true"><span data-progress></span></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" data-nav>
+    <div class="nav__inner">
+      <a class="nav__brand" href="#top" aria-label="Salón Mirador — inicio">
+        <span class="nav__mark">Salón</span><span class="nav__mark nav__mark--serif">Mirador</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Navegación principal">
+        <a href="#espacio">El espacio</a>
+        <a href="#galeria">Galería</a>
+        <a href="#eventos">Eventos</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <a href="#contacto" class="btn btn--sm nav__cta">Reservar visita</a>
+
+      <button class="nav__toggle" data-menu-toggle aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="menu" data-menu hidden>
+    <nav class="menu__links" aria-label="Navegación">
+      <a href="#espacio"><span>01</span> El espacio</a>
+      <a href="#galeria"><span>02</span> Galería</a>
+      <a href="#eventos"><span>03</span> Eventos</a>
+      <a href="#experiencia"><span>04</span> Experiencia</a>
+      <a href="#faq"><span>05</span> FAQ</a>
+      <a href="#contacto"><span>06</span> Reservar visita</a>
+    </nav>
+    <div class="menu__foot">
+      <a href="#" data-ig>Instagram</a>
+      <a href="#" data-maps>Cómo llegar</a>
+    </div>
+  </div>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="hero__media">
+        <video class="hero__video" autoplay muted loop playsinline preload="metadata"
+               poster="./media/hero-poster.jpg" data-hero-video>
+          <source src="./media/hero-loop.webm" type="video/webm" />
+          <source src="./media/hero-loop.mp4" type="video/mp4" />
+        </video>
+        <div class="hero__scrim"></div>
+      </div>
+
+      <div class="hero__content">
+        <p class="eyebrow eyebrow--light" data-hero-el>Salón de eventos · Entre la sierra y el valle</p>
+        <h1 class="hero__title">
+          <span class="line" data-hero-line>Celebra donde</span>
+          <span class="line" data-hero-line>termina el <em>horizonte</em></span>
+        </h1>
+        <p class="hero__sub" data-hero-el>
+          Un salón suspendido sobre el valle. Arquitectura contemporánea, luz de atardecer
+          y un paisaje que se vuelve parte de cada celebración.
+        </p>
+        <div class="hero__actions" data-hero-el>
+          <a href="#contacto" class="btn btn--light">Reservar una visita</a>
+          <a href="#espacio" class="btn btn--ghost btn--ghost-light">Descubrir el espacio</a>
+        </div>
+      </div>
+
+      <a href="#espacio" class="hero__cue" data-hero-el aria-label="Desplázate">
+        <span>Desliza</span>
+        <span class="hero__cue-line"></span>
+      </a>
+    </section>
+
+    <!-- ============ MANIFESTO ============ -->
+    <section class="manifesto section" id="manifesto">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>El lugar</p>
+        <p class="manifesto__lead" data-reveal-words>
+          Hay celebraciones que piden un paisaje a su altura. Mirador nació de una idea simple
+          y ambiciosa: <em>elevar el momento</em> hasta donde la vista se abre por completo.
+        </p>
+        <div class="manifesto__grid">
+          <p class="manifesto__body" data-reveal>
+            Levantado sobre la ladera, el salón mira de frente a un valle infinito de campos,
+            sierra y cielo. Aquí la arquitectura no compite con el entorno: lo enmarca.
+          </p>
+          <p class="manifesto__body" data-reveal>
+            Cada detalle está pensado para que la atención caiga donde debe —en las personas,
+            en la luz, en el instante— con la certeza de un espacio hecho para durar en la memoria.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EL ESPACIO ============ -->
+    <section class="space section--dark" id="espacio">
+      <div class="space__grid">
+        <div class="space__media" data-parallax-wrap>
+          <img src="./media/facade.webp" alt="Fachada de Salón Mirador al atardecer, con arquitectura contemporánea de madera y piedra."
+               width="1360" height="907" loading="lazy" data-parallax />
+        </div>
+        <div class="space__text">
+          <p class="eyebrow eyebrow--light" data-reveal>El espacio</p>
+          <h2 class="h2 h2--light" data-reveal>
+            Arquitectura pensada<br />para la ocasión
+          </h2>
+          <p class="lead-light" data-reveal>
+            Líneas limpias, madera cálida y grandes cristales que disuelven la frontera entre
+            el interior y el paisaje. Un volumen contemporáneo que se lee como una pieza de autor
+            y se siente como un lugar hecho para reunirse.
+          </p>
+          <ul class="specs" data-reveal-stagger>
+            <li><span class="specs__k">Interior</span><span class="specs__v">Salón climatizado de doble altura</span></li>
+            <li><span class="specs__k">Exterior</span><span class="specs__v">Terrazas y jardín con vista abierta</span></li>
+            <li><span class="specs__k">Luz</span><span class="specs__v">Atardeceres de horizonte a horizonte</span></li>
+            <li><span class="specs__k">Acceso</span><span class="specs__v">Explanada y estacionamiento privado</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALERÍA ============ -->
+    <section class="gallery section" id="galeria">
+      <div class="wrap gallery__head">
+        <p class="eyebrow" data-reveal>Galería</p>
+        <h2 class="h2" data-reveal>Un espacio que se recorre<br />con la mirada</h2>
+      </div>
+
+      <div class="gallery__grid">
+        <figure class="ga ga--tall" data-reveal-img>
+          <img src="./media/interior.webp" alt="Interior del salón montado para un evento, con telas suspendidas y series de luces cálidas." width="537" height="403" loading="lazy" />
+          <figcaption>Montaje interior</figcaption>
+        </figure>
+        <figure class="ga ga--wide" data-reveal-img>
+          <img src="./media/grounds.webp" alt="Vista aérea del salón y sus jardines sobre la ladera." width="1360" height="1020" loading="lazy" />
+          <figcaption>Los jardines</figcaption>
+        </figure>
+        <figure class="ga" data-reveal-img>
+          <img src="./media/signage.webp" alt="Señalética de Salón Mirador iluminada al anochecer entre vegetación." width="1360" height="765" loading="lazy" />
+          <figcaption>La llegada</figcaption>
+        </figure>
+        <figure class="ga ga--wide2" data-reveal-img>
+          <img src="./media/valley.webp" alt="Panorámica del valle visto desde el mirador." width="1360" height="612" loading="lazy" />
+          <figcaption>El valle</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ EVENTOS ============ -->
+    <section class="events section--dark" id="eventos">
+      <div class="wrap">
+        <div class="events__head">
+          <p class="eyebrow eyebrow--light" data-reveal>Ocasiones</p>
+          <h2 class="h2 h2--light" data-reveal>Cada celebración,<br />a su propia escala</h2>
+        </div>
+
+        <ul class="events__list" data-reveal-stagger>
+          <li class="event" data-event>
+            <span class="event__num">01</span>
+            <span class="event__name">Bodas</span>
+            <span class="event__desc">Ceremonia y banquete con el valle como telón de fondo.</span>
+            <span class="event__arrow" aria-hidden="true">↗</span>
+          </li>
+          <li class="event" data-event>
+            <span class="event__num">02</span>
+            <span class="event__name">XV Años</span>
+            <span class="event__desc">Una noche de gala con la producción y el espacio para brillar.</span>
+            <span class="event__arrow" aria-hidden="true">↗</span>
+          </li>
+          <li class="event" data-event>
+            <span class="event__num">03</span>
+            <span class="event__name">Eventos corporativos</span>
+            <span class="event__desc">Presentaciones, cenas y encuentros con carácter y privacidad.</span>
+            <span class="event__arrow" aria-hidden="true">↗</span>
+          </li>
+          <li class="event" data-event>
+            <span class="event__num">04</span>
+            <span class="event__name">Celebraciones sociales</span>
+            <span class="event__desc">Aniversarios y reuniones que merecen un marco memorable.</span>
+            <span class="event__arrow" aria-hidden="true">↗</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ DIFERENCIALES ============ -->
+    <section class="why section" id="why">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>Por qué Mirador</p>
+        <h2 class="h2 why__title" data-reveal>Detalles que se sienten,<br />no solo se cuentan</h2>
+
+        <div class="why__grid">
+          <article class="feat" data-reveal>
+            <span class="feat__num">01</span>
+            <h3 class="feat__t">La vista</h3>
+            <p class="feat__d">Un horizonte de campos y sierra que ningún salón cerrado puede ofrecer.</p>
+          </article>
+          <article class="feat" data-reveal>
+            <span class="feat__num">02</span>
+            <h3 class="feat__t">Diseño de autor</h3>
+            <p class="feat__d">Arquitectura contemporánea que eleva la fotografía y la percepción del evento.</p>
+          </article>
+          <article class="feat" data-reveal>
+            <span class="feat__num">03</span>
+            <h3 class="feat__t">La hora dorada</h3>
+            <p class="feat__d">Atardeceres que bañan el espacio con una luz imposible de reproducir.</p>
+          </article>
+          <article class="feat" data-reveal>
+            <span class="feat__num">04</span>
+            <h3 class="feat__t">Espacio flexible</h3>
+            <p class="feat__d">Interior y exterior que se adaptan a montajes íntimos o de gran formato.</p>
+          </article>
+          <article class="feat" data-reveal>
+            <span class="feat__num">05</span>
+            <h3 class="feat__t">Servicio a medida</h3>
+            <p class="feat__d">Acompañamiento cercano para que cada decisión sume a la experiencia.</p>
+          </article>
+          <article class="feat" data-reveal>
+            <span class="feat__num">06</span>
+            <h3 class="feat__t">Naturaleza y privacidad</h3>
+            <p class="feat__d">Jardines propios y un entorno reservado, lejos del ruido de la ciudad.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCIA (sticky storytelling) ============ -->
+    <section class="story" id="experiencia" data-story>
+      <div class="story__sticky">
+        <div class="story__frames">
+          <img src="./media/facade-golden.jpg" alt="Fachada del salón bañada por la luz del atardecer." class="story__img is-active" data-story-img="0" loading="lazy" />
+          <img src="./media/candles.jpg" alt="Detalle de velas suspendidas en esferas de cristal durante un evento." class="story__img" data-story-img="1" loading="lazy" />
+          <img src="./media/sparklers.jpg" alt="Primer baile de una pareja rodeada de chispas frías." class="story__img" data-story-img="2" loading="lazy" />
+        </div>
+        <div class="story__scrim"></div>
+        <div class="story__caption">
+          <p class="eyebrow eyebrow--light">La experiencia</p>
+          <p class="story__count"><span data-story-count>01</span> / 03</p>
+        </div>
+      </div>
+
+      <div class="story__steps">
+        <div class="story__step" data-story-step="0">
+          <h2 class="story__h">Llega el atardecer</h2>
+          <p class="story__p">La luz cae sobre la fachada y todo el valle se tiñe de oro. El momento de recibir comienza en el paisaje.</p>
+        </div>
+        <div class="story__step" data-story-step="1">
+          <h2 class="story__h">Se enciende la noche</h2>
+          <p class="story__p">Velas, series de luz y telas suspendidas transforman el salón en un escenario íntimo y envolvente.</p>
+        </div>
+        <div class="story__step" data-story-step="2">
+          <h2 class="story__h">El instante que se recuerda</h2>
+          <p class="story__p">Del primer baile a la última chispa: la producción que convierte una celebración en un recuerdo que no se apaga.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRUEBA SOCIAL ============ -->
+    <!-- NOTA: Reemplaza estos testimonios por reseñas reales verificadas (Google / clientes). -->
+    <section class="quotes section--dark" id="testimonios">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--light" data-reveal>Quienes celebraron aquí</p>
+        <figure class="quote" data-quote>
+          <blockquote class="quote__text">
+            “Buscábamos un lugar diferente y encontramos mucho más. La vista al atardecer
+            dejó a todos nuestros invitados sin palabras.”
+          </blockquote>
+          <figcaption class="quote__by">— Novios · Boda en Mirador</figcaption>
+        </figure>
+        <div class="quotes__nav">
+          <button data-quote-prev aria-label="Anterior">←</button>
+          <button data-quote-next aria-label="Siguiente">→</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="faq section" id="faq">
+      <div class="wrap faq__grid">
+        <div class="faq__head">
+          <p class="eyebrow" data-reveal>Preguntas</p>
+          <h2 class="h2" data-reveal>Antes de<br />reservar</h2>
+          <p class="faq__note" data-reveal>¿No encuentras tu respuesta? Escríbenos y con gusto te atendemos.</p>
+        </div>
+
+        <div class="faq__list">
+          <details class="qa" data-reveal>
+            <summary><span>¿Qué tipo de eventos se realizan en Mirador?</span><i></i></summary>
+            <div class="qa__body"><p>Bodas, XV años, eventos corporativos y celebraciones sociales. El espacio se adapta tanto a formatos íntimos como a eventos de gran escala.</p></div>
+          </details>
+          <details class="qa" data-reveal>
+            <summary><span>¿Cuál es la capacidad del salón?</span><i></i></summary>
+            <div class="qa__body"><p>El salón, junto con sus terrazas y jardín, permite distintos montajes. Cuéntanos el número aproximado de invitados y te confirmamos la mejor distribución para tu evento.</p></div>
+          </details>
+          <details class="qa" data-reveal>
+            <summary><span>¿Puedo agendar una visita al lugar?</span><i></i></summary>
+            <div class="qa__body"><p>Sí. Recomendamos conocer el espacio en persona, idealmente cerca del atardecer. Agenda tu visita desde la sección de contacto.</p></div>
+          </details>
+          <details class="qa" data-reveal>
+            <summary><span>¿El servicio incluye mobiliario y montaje?</span><i></i></summary>
+            <div class="qa__body"><p>Trabajamos con distintos esquemas según el tipo de evento. Al platicar contigo definimos qué incluye tu paquete y qué proveedores se integran.</p></div>
+          </details>
+          <details class="qa" data-reveal>
+            <summary><span>¿Cómo verifico la disponibilidad de una fecha?</span><i></i></summary>
+            <div class="qa__body"><p>Escríbenos con tu fecha tentativa y te confirmamos disponibilidad a la brevedad. Las fechas se reservan por orden de confirmación.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA / CONTACTO ============ -->
+    <section class="cta section--dark" id="contacto">
+      <div class="cta__media" data-parallax-wrap>
+        <img src="./media/valley.webp" alt="Panorámica del valle al mediodía desde el mirador." width="1360" height="612" loading="lazy" data-parallax />
+        <div class="cta__scrim"></div>
+      </div>
+      <div class="cta__inner wrap">
+        <p class="eyebrow eyebrow--light" data-reveal>Reserva</p>
+        <h2 class="cta__title" data-reveal>Ven a conocer<br />el horizonte</h2>
+        <p class="cta__sub" data-reveal>
+          Agenda una visita y descubre en persona por qué Mirador convierte una fecha
+          en un recuerdo. Con gusto resolvemos tus dudas y revisamos disponibilidad.
+        </p>
+
+        <!-- NOTA: Reemplaza los enlaces con los datos reales del cliente (ver README). -->
+        <div class="cta__actions" data-reveal>
+          <a class="btn btn--light" data-wa href="#">Escríbenos por WhatsApp</a>
+          <a class="btn btn--ghost btn--ghost-light" data-mail href="#">Enviar un correo</a>
+        </div>
+
+        <ul class="cta__meta" data-reveal>
+          <li><span>Teléfono</span><a data-tel href="#">+52 &mdash; &mdash;&mdash; &mdash;&mdash;&mdash;&mdash;</a></li>
+          <li><span>Instagram</span><a data-ig href="#">@salonmirador</a></li>
+          <li><span>Ubicación</span><a data-maps href="#">Cómo llegar</a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <div class="footer__brand">
+        <p class="footer__mark">Salón<br /><span>Mirador</span></p>
+        <p class="footer__tag">Celebra donde termina el horizonte.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Pie de página">
+        <a href="#espacio">El espacio</a>
+        <a href="#galeria">Galería</a>
+        <a href="#eventos">Eventos</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <div class="footer__social">
+        <a href="#" data-ig>Instagram</a>
+        <a href="#" data-maps>Google Maps</a>
+        <a data-wa href="#">WhatsApp</a>
+      </div>
+    </div>
+    <div class="wrap footer__base">
+      <p>© <span data-year>2026</span> Salón Mirador. Todos los derechos reservados.</p>
+      <p class="footer__credit">Dirección de arte &amp; desarrollo · edición premium</p>
+    </div>
+  </footer>
+</body>
+</html>
