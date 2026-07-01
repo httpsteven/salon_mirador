@@ -45,7 +45,13 @@
 /* ---------- Reset ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 * { margin: 0; }
-html { -webkit-text-size-adjust: 100%; }
+html {
+  -webkit-text-size-adjust: 100%;
+  /* Guard against horizontal overflow (prevents mobile zoom-out / side-scroll).
+     `clip` — unlike `hidden` — does NOT create a scroll container, so
+     position: sticky (story section) keeps working. */
+  overflow-x: clip;
+}
 body {
   font-family: var(--font-sans);
   font-size: var(--step-0);
@@ -54,7 +60,7 @@ body {
   background: var(--bone);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 img, video { display: block; max-width: 100%; height: auto; }
 a { color: inherit; text-decoration: none; }
@@ -296,7 +302,9 @@ em { font-style: italic; color: var(--bronze); }
   padding: clamp(1.6rem, 3vw, 2.6rem) 0; border-bottom: 1px solid var(--line-light);
   transition: color 0.4s var(--ease);
 }
-.event::before { content: ""; position: absolute; left: -100vw; right: -100vw; top: 0; bottom: 0; background: var(--ink-2); opacity: 0; transition: opacity 0.5s var(--ease); z-index: -1; }
+/* Full-bleed-feeling hover highlight, bounded to the padded container so it
+   never causes horizontal overflow (root cause of the mobile zoom-out). */
+.event::before { content: ""; position: absolute; left: calc(var(--gutter) * -1); right: calc(var(--gutter) * -1); top: 0; bottom: 0; background: var(--ink-2); opacity: 0; transition: opacity 0.5s var(--ease); z-index: -1; }
 .event:hover::before { opacity: 1; }
 .event__num { font-size: var(--step--1); color: var(--bronze-lt); letter-spacing: 0.1em; }
 .event__name { font-family: var(--font-display); font-weight: 340; font-size: var(--step-2); line-height: 1; letter-spacing: -0.02em; transition: transform 0.5s var(--ease); }
