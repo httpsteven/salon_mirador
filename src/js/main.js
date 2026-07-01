@@ -92,6 +92,23 @@ function initMenu() {
 /* =============================================================
    4 · Hero intro timeline
    ============================================================= */
+/* Ensure the hero video actually plays. Some browsers (iOS low-power mode,
+   strict autoplay policies) block autoplay; retry on first interaction.
+   The poster image guarantees a visible frame in every case. */
+function initHeroVideo() {
+  const video = document.querySelector('[data-hero-video]')
+  if (!video) return
+  const tryPlay = () => {
+    const p = video.play()
+    if (p && p.catch) p.catch(() => {})
+  }
+  tryPlay()
+  const onInteract = () => { tryPlay(); cleanup() }
+  const cleanup = () => ['touchstart', 'click', 'scroll', 'keydown'].forEach((e) => window.removeEventListener(e, onInteract))
+  ;['touchstart', 'click', 'scroll', 'keydown'].forEach((e) => window.addEventListener(e, onInteract, { once: true, passive: true }))
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) tryPlay() })
+}
+
 function initHero() {
   const lines = gsap.utils.toArray('[data-hero-line]')
   const els = gsap.utils.toArray('[data-hero-el]')
@@ -251,6 +268,7 @@ function boot() {
   initAnchors()
   initNav()
   initMenu()
+  initHeroVideo()
   initHero()
   initReveals()
   initStory()
