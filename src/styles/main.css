@@ -438,8 +438,21 @@ body.menu-open .nav__toggle span { background: var(--bone) !important; }
 }
 @media (max-width: 680px) {
   .manifesto__grid { grid-template-columns: 1fr; }
-  .gallery__grid { grid-template-columns: 1fr; }
-  .ga, .ga--tall, .ga--wide, .ga--wide2 { grid-column: 1 / -1; aspect-ratio: 4/3; }
+
+  /* Full-bleed editorial stack: images span edge to edge with ratios
+     matched to each shot, so every frame fills the width and reads
+     like a cinematic reel instead of identical cropped boxes. */
+  .gallery__grid { grid-template-columns: 1fr; gap: 0; padding-inline: 0; max-width: none; }
+  .ga, .ga--tall, .ga--wide, .ga--wide2 { grid-column: 1 / -1; border-radius: 0; }
+  .ga--tall  { aspect-ratio: 4/5; }   /* montaje interior */
+  .ga--wide  { aspect-ratio: 3/4; }   /* aérea de jardines */
+  .ga        { aspect-ratio: 3/4; }   /* llegada / señalética */
+  .ga--wide2 { aspect-ratio: 3/2; }   /* panorámica del valle */
+  /* On touch there is no hover — keep captions and scrim visible */
+  .ga figcaption { opacity: 1; transform: none; left: var(--gutter); bottom: var(--gutter); font-size: 0.8rem; }
+  .ga::after { opacity: 1; background: linear-gradient(to top, rgba(15,12,8,0.62), transparent 42%); }
+  .gallery__head { margin-bottom: 2rem; }
+
   .event { grid-template-columns: auto 1fr auto; }
   .event__desc { display: none; }
   .why__grid { grid-template-columns: 1fr; }
